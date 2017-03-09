@@ -52,14 +52,16 @@ public class View extends JFrame {
         panel.add(expr);
         panel.add(button1);
         add(panel, BorderLayout.PAGE_START);
-        String kif="( 2 + 3 ) * 4 ";
+        String kif="( ( 5 - 3 ) + 2";
         Scanner sc= new Scanner(kif);
         ArrayList<String> tokens= new ArrayList<>();
         while(sc.hasNext())
         {
             tokens.add(sc.next());
         }
-        System.out.println(PolishNotation.to(tokens));
+        String pnot=PolishNotation.to(tokens);
+        System.out.println(pnot);
+        System.out.println(PolishNotation.evaluate(pnot));
     }
 
 }
